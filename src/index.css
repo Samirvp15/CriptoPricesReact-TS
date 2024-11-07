@@ -69,7 +69,7 @@ body {
   transition: background-color 300ms ease;
 }
 .form [type="submit"]:hover {
-  background-color: #2b13b1;
+  background-color: #998af1;
 }
 
 .result-wrapper {
