@@ -1,15 +1,15 @@
 
 import { useMemo } from "react"
 import { useCryptoStore } from "../store"
+import Spinner from "./Spinner"
 
 export default function CryptoPriceDisplay() {
 
-    const { result } = useCryptoStore()
-    //const loading = useCryptoStore((state) => state.loading)
+    const { result,loading } = useCryptoStore()
     const hasResult = useMemo(() => !Object.values(result).includes(''), [result])
     return (
         <div className="result-wrapper">
-            {hasResult && (
+             {loading ? <Spinner /> : hasResult && 
                 <>
                     <h2>Cotización</h2>
                     <div className="result">
@@ -26,7 +26,7 @@ export default function CryptoPriceDisplay() {
                         </div>
                     </div>
                 </>
-            )}
+            }
         </div>
     )
 }
