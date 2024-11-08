@@ -4,7 +4,7 @@ import { useCryptoStore } from "./store"
 
 function App() {
 
-  const fetchCryptos = useCryptoStore((state) => state.fetchCryptos)
+  const{fetchCryptos} = useCryptoStore()
 
   useEffect(()=>{
     fetchCryptos()
